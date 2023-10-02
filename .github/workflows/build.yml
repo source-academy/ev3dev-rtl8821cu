@@ -1,0 +1,25 @@
+name: Build release
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Build drivers
+        run: ./setup.sh
+      - name: Create release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          automatic_release_tag: latest-${{ github.ref_name }}
+          prerelease: ${{ github.ref_name == 'main' }}
+          title: Latest commit on ${{ github.ref_name }}
+          files: |
+            8821cu.conf
+            8821cu.ko
