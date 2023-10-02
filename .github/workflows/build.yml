@@ -4,6 +4,9 @@ on:
     branches:
       - main
 
+env:
+  WORKDIR: "/src/build"
+
 jobs:
   build:
     name: Build release
@@ -21,5 +24,5 @@ jobs:
           prerelease: ${{ github.ref_name == 'main' }}
           title: Latest commit on ${{ github.ref_name }}
           files: |
-            8821cu.conf
-            8821cu.ko
+            ${{ env.WORKDIR }}/rtl8821cu/8821cu.conf
+            ${{ env.WORKDIR }}/rtl8821cu/8821cu.ko

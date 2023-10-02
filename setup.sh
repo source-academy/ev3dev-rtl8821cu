@@ -2,7 +2,6 @@
 set -euxo pipefail
 
 GNU_PATH="/usr/lib/x86_64-linux-gnu"
-WORKDIR="$HOME/work"
 
 # Install dependencies
 apt-get update
