@@ -8,7 +8,7 @@ WORKDIR="$HOME/work"
 apt-get update
 apt-get install -y software-properties-common
 apt-add-repository ppa:ev3dev/tools
-apt-get install -y wget git build-essential ncurses-dev fakeroot bc u-boot-tools lzop flex bison libssl-dev gcc-arm-linux-gnueabihf
+apt-get install -y wget git build-essential ncurses-dev fakeroot bc u-boot-tools lzop flex bison libssl-dev gcc-arm-linux-gnueabihf gcc-arm-linux-gnueabi
 
 wget https://releases.linaro.org/components/toolchain/binaries/6.4-2018.05/arm-linux-gnueabihf/gcc-linaro-6.4.1-2018.05-x86_64_arm-linux-gnueabihf.tar.xz
 tar xf gcc-linaro-6.4.1-2018.05-x86_64_arm-linux-gnueabihf.tar.xz
