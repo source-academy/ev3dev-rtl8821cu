@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Build drivers
-        run: ./setup.sh
+        run: sudo ./setup.sh
       - name: Create release
         uses: marvinpinto/action-automatic-releases@latest
         with:
